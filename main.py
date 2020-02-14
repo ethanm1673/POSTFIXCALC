@@ -17,6 +17,7 @@ def mathOpps(int1, int2, str1):
     if str1 == "/":
         return int1 / int2
 
+
 # Input list contains each char of the inputStr string
 inputList = []
 # Num list contains the the numbers passed from the inputList[]
@@ -38,7 +39,7 @@ while z < len(inputList):
     z = z + 1
 
 #created the int inputNums to calculate the legnth of the numList[] and oppList[]
-inputNums = int(len(inputList)/2 + .5)
+inputNums = int(len(inputList) / 2 + .5)
 
 #moves the numbers from inputList[] to numList[]
 for x in range(inputNums):
@@ -52,5 +53,8 @@ print(numList)
 
 #Calls the mathOpps() function and passes the last two values of numList[] and the last value of oppList[] to be computed for the legnth of numList[]
 for x in numList:
-    numList.append(mathOpps(int(numList.pop(len(numList)-1)), int(numList.pop(len(numList)-2)), oppList.pop(-1)))
+    numList.append(
+        mathOpps(
+            int(numList.pop(len(numList) - 1)),
+            int(numList.pop(len(numList) - 2)), oppList.pop(-1)))
     print(numList)
