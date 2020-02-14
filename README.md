@@ -1,2 +1,2 @@
 # POSTFIXCALC
-Just A simple Postfix calculator project for my AP computer science class
+Just a simple Postfix calculator project for my AP computer science class
