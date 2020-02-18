@@ -9,13 +9,13 @@ Riverwood Int. HS.
 #A function that translates the string opperations passed from the user input, to actual math opperations
 def mathOpps(int1, int2, str1):
     if str1 == "*":
-        return int1 * int2
+        return float(int1 * int2)
     if str1 == "+":
-        return int1 + int2
+        return float(int2 + int1)
     if str1 == "-":
-        return int1 - int2
+        return float(int2 - int1)
     if str1 == "/":
-        return int1 / int2
+        return float(int2 / int1)
 
 
 # Input list contains each char of the inputStr string
@@ -25,6 +25,7 @@ numList = []
 #opp list contains the opperations passed from the inputList[]
 oppList = []
 
+#Takes the user input and assigns it to inputStr
 inputStr = input("Enter your Postfix expression then press enter. ")
 
 #moves each individual char in the string "inputStr" into inputList[]
@@ -49,12 +50,27 @@ for x in range(inputNums):
 for x in range(inputNums, len(inputList)):
     oppList.append(inputList[x])
 
-print(numList)
+#Vars for the function below
+tempLast = None
+tempLast2 = None
+tempDone = None
+oppLast = None
 
 #Calls the mathOpps() function and passes the last two values of numList[] and the last value of oppList[] to be computed for the legnth of numList[]
 for x in numList:
-    numList.append(
-        mathOpps(
-            int(numList.pop(len(numList) - 1)),
-            int(numList.pop(len(numList) - 2)), oppList.pop(-1)))
-    print(numList)
+  tempLast = float(numList.pop(len(numList) - 1))
+  tempLast2 = float(numList.pop(len(numList) - 2))
+  oppLast = oppList.pop(len(oppList) - 1)
+  tempDone = mathOpps(tempLast, tempLast2, oppLast)
+  numList.append(tempDone)
+
+#this is literally the same code as above but it was broken tell i added this. TBH i have no idea why it fixed it but it did:)
+for x in numList:
+  tempLast = float(numList.pop(len(numList) - 1))
+  tempLast2 = float(numList.pop(len(numList) - 2))
+  oppLast = oppList.pop(len(oppList) - 1)
+  tempDone = mathOpps(tempLast, tempLast2, oppLast)
+  numList.append(tempDone)
+
+
+print(numList)
