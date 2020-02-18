@@ -58,19 +58,18 @@ oppLast = None
 
 #Calls the mathOpps() function and passes the last two values of numList[] and the last value of oppList[] to be computed for the legnth of numList[]
 for x in numList:
-  tempLast = float(numList.pop(len(numList) - 1))
-  tempLast2 = float(numList.pop(len(numList) - 2))
-  oppLast = oppList.pop(len(oppList) - 1)
-  tempDone = mathOpps(tempLast, tempLast2, oppLast)
-  numList.append(tempDone)
+    tempLast = float(numList.pop(len(numList) - 1))
+    tempLast2 = float(numList.pop(len(numList) - 2))
+    oppLast = oppList.pop(len(oppList) - 1)
+    tempDone = mathOpps(tempLast, tempLast2, oppLast)
+    numList.append(tempDone)
 
 #this is literally the same code as above but it was broken tell i added this. TBH i have no idea why it fixed it but it did:)
 for x in numList:
-  tempLast = float(numList.pop(len(numList) - 1))
-  tempLast2 = float(numList.pop(len(numList) - 2))
-  oppLast = oppList.pop(len(oppList) - 1)
-  tempDone = mathOpps(tempLast, tempLast2, oppLast)
-  numList.append(tempDone)
-
+    tempLast = float(numList.pop(len(numList) - 1))
+    tempLast2 = float(numList.pop(len(numList) - 2))
+    oppLast = oppList.pop(len(oppList) - 1)
+    tempDone = mathOpps(tempLast, tempLast2, oppLast)
+    numList.append(tempDone)
 
 print(numList)
